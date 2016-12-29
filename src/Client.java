@@ -4,9 +4,6 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Michael on 13/12/2016.
- */
 public class Client {
 
     public static void main(String[] args) throws IOException{
@@ -19,6 +16,8 @@ public class Client {
 
         int port = 4545;
 
+        //Attempts to create a connection to the Bank Server
+
         try {
             BankClientSocket = new Socket("localhost", port);
             out = new PrintWriter(BankClientSocket.getOutputStream(),true);
@@ -29,9 +28,11 @@ public class Client {
             System.exit(1);
         }
 
+        //inputs received from the user is added to an arraylist
+
         BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
         List<String> outPut = new ArrayList<>();
-        String fromUser, fromsServer;
+        String fromUser, fromServer;
 
         while((fromServer = in.readLine()) != null){
             if(fromServer.isEmpty()){
@@ -50,6 +51,8 @@ public class Client {
                 else{ outPut.add(fromServer);}
             }
         }
+
+        //the connection is closed.
 
         out.close();
         in.close();
