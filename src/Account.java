@@ -2,18 +2,19 @@ import java.net.Socket;
 
 public class Account {
 
-    private String Name;
+    private String AccountName;
     private double Balance;
     private Socket Socket;
 
-    public Account(String name, Socket socket){
-        System.out.println("A new account has been created");
-        this.Name = name;
+    public Account(String threadName, Socket socket){
+
+        this.AccountName = threadName;
         this.Balance = 100;
         this.Socket = socket;
+        System.out.println("A new account has been created, Name:" + this.AccountName + "Balance: " + this.Balance + "socket: " + this.Socket);
     }
 
-    public String getName(){ return this.Name;}
+    public String getName(){ return this.AccountName;}
 
     public synchronized double getBalance(){
         //lock the account, then check the balance
@@ -27,10 +28,8 @@ public class Account {
     }
 
     public synchronized void setLock(){
-
     }
 
     public synchronized void setRelease(){
-
     }
 }
