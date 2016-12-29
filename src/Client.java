@@ -47,14 +47,12 @@ public class Client {
                 fromUser = stdIn.readLine();
 
                 if (!fromUser.equals("")){
-
+                    out.println(fromUser);
                 }
                 else{ outPut.add(fromServer);}
             }
         }
-
         //the connection is closed.
-
         out.close();
         in.close();
         stdIn.close();

@@ -16,21 +16,17 @@ public class BankServerThread extends Thread{
 
     public void run(){
     //Create the account that I'm assigning to the thread
-
+        System.out.println(BankServerThread.currentThread() + " initialising...");
         try{
-            System.out.println(BankServerThread.currentThread() + " initialising...");
             PrintWriter out = new PrintWriter(ServerSocket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(ServerSocket.getInputStream()));
             int inputLine;
             String outputLine;
 
+            //assigns the current thread to an account
             new Account(currentThread().getName(),this.ServerSocket);
 
-            out.println("BrunelBank Menu \n Choose an option:");
-            out.println("1. Balance");
-            out.println("2. Deposit");
-            out.println("3. Withdraw");
-            out.println("4. Transfer");
+            out.println("BrunelBank Menu: Choose an option: 1. Balance 2. Deposit 3. Withdraw 4. Transfer");
             inputLine = parseInt(in.readLine());
             switch(inputLine){
 
