@@ -22,8 +22,9 @@ public class Client {
             BankClientSocket = new Socket("localhost", port);
             out = new PrintWriter(BankClientSocket.getOutputStream(),true);
             in = new BufferedReader(new InputStreamReader(BankClientSocket.getInputStream()));
-
+            System.out.println("Connection established to server on port: " + port);
         } catch(UnknownHostException e){
+            System.out.println("Error. Could not connect to the server on port: " + port);
             e.printStackTrace();
             System.exit(1);
         }
