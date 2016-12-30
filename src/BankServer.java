@@ -18,7 +18,7 @@ public class BankServer {
         //create a new thread/user when a new client has connected.
 
         while(true){
-            new BankServerThread(serverSocket.accept()).start();
+            new BankServerThread(serverSocket.accept(),BankServerThread.currentThread().getName()).start();
         }
     }
 }

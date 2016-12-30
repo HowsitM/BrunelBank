@@ -1,15 +1,22 @@
-import java.io.BufferedReader;
-import java.io.PrintWriter;
-import java.net.Socket;
+import java.util.Map;
+import java.util.HashMap;
 
 public class BankState {
 
-    private Socket socket;
-    private PrintWriter out;
-    private BufferedReader in;
-    private Account account;
+    static private Map<String, Long> isLocked = new HashMap<>();
 
-    public BankState(){
+    public static boolean aquireLock(String AccountID){
+        Thread thread = Thread.currentThread();
 
+        if(isLocked.containsKey(AccountID)){
+            return isLocked.get(AccountID) == thread.getId();
+        } else {
+          isLocked.put(AccountID, thread.getId());
+          return true;
+        }
+    }
+
+    public static void unlock(String AccountID){
+        isLocked.remove(AccountID);
     }
 }

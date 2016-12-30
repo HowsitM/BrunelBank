@@ -6,11 +6,12 @@ import static java.lang.Integer.parseInt;
 public class BankServerThread extends Thread{
 
     private Socket ServerSocket = null;
+    private String idName;
 
-    public BankServerThread(Socket serverSocket){
-        super("Brunel Bank");
+    public BankServerThread(Socket serverSocket, String idName){
+        super(idName);
+        this.idName = idName;
         this.ServerSocket = serverSocket;
-
     }
 
     public void run(){
@@ -24,7 +25,7 @@ public class BankServerThread extends Thread{
             String outputLine;
 
             //assigns the current thread to an account
-            new Account(currentThread().getName(),this.ServerSocket);
+            new Account(BankServerThread.currentThread().getName(), this.ServerSocket);
 
             out.println(Account.class);
 
@@ -47,7 +48,6 @@ public class BankServerThread extends Thread{
 
     private synchronized void doBalance(){
         //this is printed out to the server
-        System.out.println("Still got to do this part");
     }
 
     private double doDeposit(){
