@@ -6,23 +6,20 @@ public class Account {
     private double Balance;
     private Socket Socket;
 
-    public Account(String threadName, Socket socket){
+    Account(String threadName, Socket socket){
 
         this.AccountId = threadName;
         this.Balance = 100;
         this.Socket = socket;
-        System.out.println("A new account has been created, Name: " + this.AccountId + " Balance: "
-                + this.Balance + " Socket: " + this.Socket + " Thread: " + BankServerThread.currentThread().getId());
+        System.out.println("A new account has been created, Name: " + AccountId + " Balance: "
+                + Balance + " Socket: " + Socket + " Thread: " + BankServerThread.currentThread().getId());
+        Users.addActiveUsers(AccountId);
     }
 
-    public String getName(){ return this.AccountId;}
+    public String getAccountId(){ return AccountId;}
 
     public synchronized double getBalance(){
-        //lock the account,
-        // then check the balance
-        //release the lock
-        //notify other threads that the lock has been lifted.
-        return this.Balance;
+        return Balance;
     }
 
     public void setBalance(double balance){
@@ -35,7 +32,6 @@ public class Account {
             System.out.println(AccountId + " could not be updated while the account was locked.");
         }
     }
-
 
     public synchronized void setLock(){
         try

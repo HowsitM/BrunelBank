@@ -26,10 +26,9 @@ public class BankServerThread extends Thread{
 
             //assigns the current thread to an account
             new Account(BankServerThread.currentThread().getName(), this.ServerSocket);
+            out.println("The Current users are: " + Users.getActiveUsers());
 
-            out.println(Account.class);
-
-            out.println("BrunelBank Menu: Choose an option: 1. Balance 2. Deposit 3. Withdraw 4. Transfer");
+            out.println("BrunelBank Menu:\nChoose an option:\n1. Balance\n2. Deposit\n3. Withdraw\n4. Transfer");
             inputLine = parseInt(in.readLine());
             switch(inputLine){
 
@@ -47,7 +46,11 @@ public class BankServerThread extends Thread{
     }
 
     private synchronized void doBalance(){
-        //this is printed out to the server
+
+        //lock this thread,
+        //check the threads accounts balance
+        //unlock the thread
+        //notify everyone
     }
 
     private double doDeposit(){
