@@ -26,7 +26,7 @@ public class BankServerThread extends Thread{
             //assigns the current thread to an account
             new Account(currentThread().getName(),this.ServerSocket);
 
-            out.println("BrunelBank Menu:\nChoose an option:\n1. Balance\n2. Deposit\n3. Withdraw\n4. Transfer\n");
+            out.println("BrunelBank Menu: Choose an option: 1. Balance 2. Deposit 3. Withdraw 4. Transfer");
             inputLine = parseInt(in.readLine());
             switch(inputLine){
 
