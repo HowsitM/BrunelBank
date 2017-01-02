@@ -16,10 +16,16 @@ public class Account {
         Users.addActiveUsers(AccountId);
     }
 
-    public String getAccountId(){ return AccountId;}
+    String getAccountId(){ return AccountId;}
 
     public synchronized double getBalance(){
-        return Balance;
+        if(BankState.aquireLock(AccountId)){
+            System.out.println("Lock acquired for account " + AccountId);
+            return Balance;
+        } else {
+            System.out.println("Lock could not be acquired for account before getting the balance");
+            return 0;
+        }
     }
 
     public void setBalance(double balance){
@@ -37,10 +43,10 @@ public class Account {
         try
         {
             while(!BankState.aquireLock(AccountId)){
-                System.out.println("Attempting to aquire a lock on account " + AccountId);
+                System.out.println("Attempting to acquire a lock on account " + AccountId);
                 wait();
             }
-            System.out.println(AccountId + " has aquired a lock");
+            System.out.println(AccountId + " has acquired a lock");
         }
         catch(InterruptedException e)
         {
