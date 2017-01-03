@@ -7,15 +7,25 @@ public class BankServerThread extends Thread{
 
     private Socket ServerSocket = null;
     private String idName;
+    private Account account;
 
     public BankServerThread(Socket serverSocket, String idName){
         super(idName);
         this.idName = idName;
         this.ServerSocket = serverSocket;
     }
+    private PrintWriter out;
 
     public void run(){
     //Create the account that I'm assigning to the thread
+
+        try{
+            this.out = new PrintWriter(this.ServerSocket.getOutputStream(), true);}
+        catch(IOException e){
+            e.printStackTrace();
+        }
+
+
         System.out.println(BankServerThread.currentThread() + " initialising...");
 
         try{
@@ -25,8 +35,9 @@ public class BankServerThread extends Thread{
             String outputLine;
 
             //assigns the current thread to an account
-            new Account(BankServerThread.currentThread().getName(), this.ServerSocket);
-            out.println("The Current users are: " + Users.getActiveUsers());
+            Account account = new Account(BankServerThread.currentThread().getName(), this.ServerSocket);
+            this.account = account;
+            out.println("The Current users are: " +  account.getAccountId());
 
             out.println("BrunelBank Menu:\nChoose an option:\n1. Balance\n2. Deposit\n3. Withdraw\n4. Transfer\n\r");
             inputLine = parseInt(in.readLine());
@@ -45,22 +56,18 @@ public class BankServerThread extends Thread{
         }
     }
 
-    public void doBalance(){
-//Having issues with static and non static calls :(
-
-        BankState.aquireLock(idName);
-        //Account.getBalance();
-        //check the threads accounts balance
-        //unlock the thread
-        //notify everyone
+    public synchronized void doBalance(){
+        account.setLock();
+        out.println("Account "  + account.getAccountId() + " has " + account.getBalance());
+        account.setRelease();
     }
 
-    private double doDeposit(){
+    private synchronized double doDeposit(){
         System.out.println("Still got to do this part");
         return 0;
     }
 
-    private double doWithdraw(){
+    private synchronized double doWithdraw(){
         System.out.println("Still got to do this part");
         return 0;
     }

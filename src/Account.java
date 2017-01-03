@@ -28,7 +28,7 @@ public class Account {
         }
     }
 
-    public void setBalance(double balance){
+    public synchronized void setBalance(double balance){
 
         if (BankState.aquireLock(AccountId)){
             this.Balance = balance;
