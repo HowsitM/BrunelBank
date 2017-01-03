@@ -5,19 +5,21 @@ import static java.lang.Integer.parseInt;
 
 public class BankServerThread extends Thread{
 
-    private Socket ServerSocket = null;
+    private Socket ServerSocket;
     private String idName;
     private Account account;
+    private PrintWriter out;
 
-    public BankServerThread(Socket serverSocket, String idName){
-        super(idName);
-        this.idName = idName;
+
+    public BankServerThread(Socket serverSocket, String newThreadName){
+        super(newThreadName);
+        this.idName = newThreadName;
         this.ServerSocket = serverSocket;
     }
-    private PrintWriter out;
 
     public void run(){
     //Create the account that I'm assigning to the thread
+        String tryName;
 
         try{
             this.out = new PrintWriter(this.ServerSocket.getOutputStream(), true);}
@@ -25,22 +27,104 @@ public class BankServerThread extends Thread{
             e.printStackTrace();
         }
 
-
         System.out.println(BankServerThread.currentThread() + " initialising...");
+
+//attempts to rename the current thread
+//        try{
+//            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+//            out.println("What is the name of your account? ");
+//            tryName = in.readLine();
+//            idName = tryName;
+//
+//        }catch  (IOException e) {
+//            e.printStackTrace();
+//        }
+
+        //assigns the current thread to an account
+        Account account = new Account(idName, this.ServerSocket);
+        this.account = account;
+
+            //account.setAccountId(idName);
+            out.println("You are logged in as: " +  account.getAccountId());
+            Menu();
+    }
+
+    public synchronized void doBalance(){
+
+        account.setLock();
+        out.println("Account "  + account.getAccountId() + " has " + account.getBalance());
+        account.setRelease();
+        Menu();
+    }
+
+    private synchronized void doDeposit(){
+
+        double depositAmount;
+        double newBalance;
+        out.println("How much would you like to deposit?");
+
+        try{
+            BufferedReader in = new BufferedReader(new InputStreamReader(ServerSocket.getInputStream()));
+            account.setLock();
+            depositAmount = Double.parseDouble(in.readLine());
+            newBalance = account.getBalance() + depositAmount;
+            account.setBalance(newBalance);
+            out.println("You have deposited " + depositAmount + " into account " + account.getAccountId() +
+                                        " Your balance has been updated to " + this.account.getBalance());
+            account.setRelease();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        Menu();
+    }
+
+    private synchronized void doWithdraw(){
+
+        double withdrawAmount;
+        double newBalance;
+        out.println("How much would you like to withdraw?");
+
+        try{
+            BufferedReader in = new BufferedReader(new InputStreamReader(ServerSocket.getInputStream()));
+            account.setLock();
+            withdrawAmount = Double.parseDouble(in.readLine());
+            newBalance = account.getBalance() - withdrawAmount;
+            account.setBalance(newBalance);
+            out.println("You have withdrawn " + withdrawAmount + " from account " + account.getAccountId() +
+                                            " Your balance has been updated to " + this.account.getBalance());
+            account.setRelease();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        Menu();
+    }
+
+    private synchronized void doTransfer(){
+
+        //give unique names to users
+        //display all active users
+        //ask which user they want to send money too and take input
+        //ask how much they want to send
+        //take money out of current user account balance
+        //update balance
+        //add money to selected users account balance
+        //update balance
+
+        Menu();
+    }
+
+    private synchronized void Menu(){
 
         try{
             PrintWriter out = new PrintWriter(ServerSocket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(ServerSocket.getInputStream()));
             int inputLine;
-            String outputLine;
-
-            //assigns the current thread to an account
-            Account account = new Account(BankServerThread.currentThread().getName(), this.ServerSocket);
-            this.account = account;
-            out.println("The Current users are: " +  account.getAccountId());
 
             out.println("BrunelBank Menu:\nChoose an option:\n1. Balance\n2. Deposit\n3. Withdraw\n4. Transfer\n\r");
             inputLine = parseInt(in.readLine());
+
             switch(inputLine){
 
                 case 1: doBalance(); break;
@@ -54,26 +138,6 @@ public class BankServerThread extends Thread{
         }catch (Exception e){
             System.err.println(e);
         }
-    }
-
-    public synchronized void doBalance(){
-        account.setLock();
-        out.println("Account "  + account.getAccountId() + " has " + account.getBalance());
-        account.setRelease();
-    }
-
-    private synchronized double doDeposit(){
-        System.out.println("Still got to do this part");
-        return 0;
-    }
-
-    private synchronized double doWithdraw(){
-        System.out.println("Still got to do this part");
-        return 0;
-    }
-
-    private synchronized void doTransfer(){
-        System.out.println("Still got to do this part");
     }
 
 }

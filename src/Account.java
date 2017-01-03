@@ -16,7 +16,9 @@ public class Account {
         Users.addActiveUsers(AccountId);
     }
 
-    String getAccountId(){ return AccountId;}
+    String getAccountId(){
+        return AccountId;
+    }
 
     public synchronized double getBalance(){
         if(BankState.aquireLock(AccountId)){
@@ -27,6 +29,10 @@ public class Account {
             return 0;
         }
     }
+
+    //public synchronized void setAccountId(String name){
+    //    this.AccountId = name;
+    //}
 
     public synchronized void setBalance(double balance){
 
