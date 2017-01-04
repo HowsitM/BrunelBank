@@ -6,14 +6,14 @@ public class Account {
     private double Balance;
     private Socket Socket;
 
-    Account(String threadName, Socket socket){
+    Account(String newThreadName, Socket socket){
 
-        this.AccountId = threadName;
+        this.AccountId = newThreadName;
         this.Balance = 100;
         this.Socket = socket;
         System.out.println("A new account has been created, Name: " + AccountId + " Balance: "
                 + Balance + " Socket: " + Socket + " Thread: " + BankServerThread.currentThread().getId());
-        Users.addActiveUsers(AccountId);
+        //Users.addActiveUsers(AccountId);
     }
 
     String getAccountId(){
@@ -26,13 +26,9 @@ public class Account {
             return Balance;
         } else {
             System.out.println("Lock could not be acquired for account before getting the balance");
-            return 0;
+            return Balance;
         }
     }
-
-    //public synchronized void setAccountId(String name){
-    //    this.AccountId = name;
-    //}
 
     public synchronized void setBalance(double balance){
 

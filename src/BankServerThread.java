@@ -1,5 +1,6 @@
 import java.net.*;
 import java.io.*;
+import java.util.HashMap;
 
 import static java.lang.Integer.parseInt;
 
@@ -10,7 +11,6 @@ public class BankServerThread extends Thread{
     private Account account;
     private PrintWriter out;
 
-
     public BankServerThread(Socket serverSocket, String newThreadName){
         super(newThreadName);
         this.idName = newThreadName;
@@ -19,7 +19,6 @@ public class BankServerThread extends Thread{
 
     public void run(){
     //Create the account that I'm assigning to the thread
-        String tryName;
 
         try{
             this.out = new PrintWriter(this.ServerSocket.getOutputStream(), true);}
@@ -29,22 +28,11 @@ public class BankServerThread extends Thread{
 
         System.out.println(BankServerThread.currentThread() + " initialising...");
 
-//attempts to rename the current thread
-//        try{
-//            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-//            out.println("What is the name of your account? ");
-//            tryName = in.readLine();
-//            idName = tryName;
-//
-//        }catch  (IOException e) {
-//            e.printStackTrace();
-//        }
-
         //assigns the current thread to an account
         Account account = new Account(idName, this.ServerSocket);
         this.account = account;
-
-            //account.setAccountId(idName);
+        Users.addActiveUsers(idName);
+        System.out.println("These are the active users "+ Users.getActiveUsers());
             out.println("You are logged in as: " +  account.getAccountId());
             Menu();
     }
@@ -70,7 +58,7 @@ public class BankServerThread extends Thread{
             newBalance = account.getBalance() + depositAmount;
             account.setBalance(newBalance);
             out.println("You have deposited " + depositAmount + " into account " + account.getAccountId() +
-                                        " Your balance has been updated to " + this.account.getBalance());
+                                        " Your balance has been updated to " + this.account.getBalance()+"\r");
             account.setRelease();
         }
         catch (IOException e) {
@@ -103,12 +91,27 @@ public class BankServerThread extends Thread{
 
     private synchronized void doTransfer(){
 
-        //give unique names to users
-        //display all active users
-        //ask which user they want to send money too and take input
-        //ask how much they want to send
-        //take money out of current user account balance
-        //update balance
+        String currentUser = this.idName;
+        String transferToUser;
+        double transferAmount = 0;
+
+        out.println("Who would you like to send money to?\n"+ Users.getActiveUsers());
+        Users.getActiveUsers();
+        try{
+            BufferedReader in = new BufferedReader(new InputStreamReader(ServerSocket.getInputStream()));
+            transferToUser = in.readLine(); //who you are sending it too
+
+            out.println("How much would you like to send them?");
+            Double.parseDouble(in.readLine());
+
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+        account.setLock();
+        double newBalance = account.getBalance() - transferAmount;
+        account.setBalance(newBalance);
+        account.setRelease();
+
         //add money to selected users account balance
         //update balance
 
