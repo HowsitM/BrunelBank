@@ -23,12 +23,12 @@ public class Database {
         }
     }
 
-    public static void createAccount(String accountName, double balance) {
-        update("INSERT INTO Users (name, balance) VALUES (" + "" + accountName + "',"
+    public static void createAccount(String accountName, Double balance) {
+        update("INSERT INTO Users (name, balance) VALUES (" + "'" + accountName + "',"
                 + balance + ")");
         }
 
-    public static void update(String sql){
+    private static void update(String sql){
 
         try {
             stmt.executeUpdate(sql);
@@ -39,7 +39,7 @@ public class Database {
 
     public static Account getAccount(String accountName) {
         try {
-            ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE name='\" + accountName + \"'");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE name='" + accountName + "'");
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");

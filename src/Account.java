@@ -13,8 +13,7 @@ public class Account {
         this.Balance = 100;
         this.Socket = socket;
 
-        Database.createAccount(this.AccountId, this.Balance);
-
+        //Database.createAccount(this.AccountId, this.Balance);
 
         //System.out.println("A new account has been created, Name: " + AccountId + " Balance: "
           //      + Balance + " Socket: " + Socket + " Thread: " + BankServerThread.currentThread().getId());
