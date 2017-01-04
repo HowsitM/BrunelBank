@@ -24,8 +24,7 @@ public class Database {
     }
 
     public static void createAccount(String accountName, Double balance) {
-        update("INSERT INTO Users (name, balance) VALUES (" + "'" + accountName + "',"
-                + balance + ")");
+        update("INSERT INTO Users (name, balance) VALUES (" + "'" + accountName + "'," + balance + ")");
         }
 
     private static void update(String sql){

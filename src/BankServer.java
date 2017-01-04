@@ -17,6 +17,9 @@ public class BankServer {
         }
         //create a new thread/user when a new client has connected.
 
+        new Database();
+        System.out.println("Database has been created");
+
         while(true){
 
             for (int i =1; i < 100;i++) {

@@ -10,7 +10,7 @@ public class BankServerThread extends Thread{
     private String idName;
     private Account account;
     private PrintWriter out;
-    private Double startBalance = 100.00;
+    //private Double startBalance = 100.00;
 
     public BankServerThread(Socket serverSocket, String newThreadName){
         super(newThreadName);
@@ -29,9 +29,8 @@ public class BankServerThread extends Thread{
 
         System.out.println(BankServerThread.currentThread() + " initialising...");
 
-        //assigns the current thread to an account
-        Database.createAccount(idName,startBalance);
 
+        //assigns the current thread to an account
         Account account = new Account(idName, this.ServerSocket);
 
         this.account = account;
