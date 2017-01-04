@@ -5,15 +5,27 @@ public class Account {
     private String AccountId;
     private double Balance;
     private Socket Socket;
+    private int iD;
 
     Account(String newThreadName, Socket socket){
 
         this.AccountId = newThreadName;
         this.Balance = 100;
         this.Socket = socket;
-        System.out.println("A new account has been created, Name: " + AccountId + " Balance: "
-                + Balance + " Socket: " + Socket + " Thread: " + BankServerThread.currentThread().getId());
+
+        Database.createAccount(this.AccountId, this.Balance);
+
+
+        //System.out.println("A new account has been created, Name: " + AccountId + " Balance: "
+          //      + Balance + " Socket: " + Socket + " Thread: " + BankServerThread.currentThread().getId());
         //Users.addActiveUsers(AccountId);
+    }
+
+    Account(int id, String accountId, Double balance){
+
+        this.AccountId = accountId;
+        this.Balance = balance;
+        this.iD = id;
     }
 
     String getAccountId(){
@@ -23,7 +35,7 @@ public class Account {
     public synchronized double getBalance(){
         if(BankState.aquireLock(AccountId)){
             System.out.println("Lock acquired for account " + AccountId);
-            return Balance;
+            return Database.getAccountBalance(AccountId);
         } else {
             System.out.println("Lock could not be acquired for account before getting the balance");
             return Balance;
@@ -34,6 +46,7 @@ public class Account {
 
         if (BankState.aquireLock(AccountId)){
             this.Balance = balance;
+            Database.setAccountBalance(this.AccountId, this.Balance);
             System.out.println(AccountId + " Balance has been updated");
         }
         else{

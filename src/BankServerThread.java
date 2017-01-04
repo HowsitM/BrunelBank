@@ -91,29 +91,46 @@ public class BankServerThread extends Thread{
 
     private synchronized void doTransfer(){
 
-        String currentUser = this.idName;
-        String transferToUser;
-        double transferAmount = 0;
+        String receiver;
+        Account currentAccount = this.account;
+        Account receiverAccount;
+        Double transferAmount;
+        Double currentAccountNewBalance;
+        Double receiverAccountNewBalance;
+
+        //Lock the account you are using
+        currentAccount.setLock();
 
         out.println("Who would you like to send money to?\n"+ Users.getActiveUsers());
         Users.getActiveUsers();
+
         try{
             BufferedReader in = new BufferedReader(new InputStreamReader(ServerSocket.getInputStream()));
-            transferToUser = in.readLine(); //who you are sending it too
+
+            receiver = in.readLine(); //who you are sending it too
+            receiverAccount = Database.getAccount(receiver);
+            receiverAccount.setLock();
 
             out.println("How much would you like to send them?");
-            Double.parseDouble(in.readLine());
+            transferAmount = Double.parseDouble(in.readLine());
 
-        }catch(IOException e){
+            currentAccountNewBalance = currentAccount.getBalance() - transferAmount;
+            currentAccount.setBalance(currentAccountNewBalance);
+
+            receiverAccountNewBalance = receiverAccount.getBalance() + transferAmount;
+            receiverAccount.setBalance(receiverAccountNewBalance);
+
+            out.println("You have sent " + transferAmount + "to " + receiverAccount.getAccountId()
+                    + ". Your balance is now" + currentAccount.getBalance());
+
+            currentAccount.setRelease();
+            System.out.println("Current account " + currentAccount.getAccountId() + " has been released");
+            receiverAccount.setRelease();
+            System.out.println("Receiver account " + receiverAccount.getAccountId() + " has been released");
+
+        }catch(IOException  | NullPointerException e){
             e.printStackTrace();
         }
-        account.setLock();
-        double newBalance = account.getBalance() - transferAmount;
-        account.setBalance(newBalance);
-        account.setRelease();
-
-        //add money to selected users account balance
-        //update balance
 
         Menu();
     }
@@ -135,7 +152,7 @@ public class BankServerThread extends Thread{
                 case 3: doWithdraw(); break;
                 case 4: doTransfer(); break;
                 case 5: break;
-                default: doBalance(); break;
+                default: Menu(); break;
             }
 
         }catch (Exception e){
