@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59a0685b-0306-403a-b610-81b917de7d93" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrunelBank/Account.class" afterPath="$PROJECT_DIR$/out/production/BrunelBank/Account.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrunelBank/BankServer.class" afterPath="$PROJECT_DIR$/out/production/BrunelBank/BankServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrunelBank/BankServerThread.class" afterPath="$PROJECT_DIR$/out/production/BrunelBank/BankServerThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="59a0685b-0306-403a-b610-81b917de7d93" name="Default" comment="BankServerThread - Transfer update to get account name&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrunelBank.iml" afterPath="$PROJECT_DIR$/BrunelBank.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Account.java" afterPath="$PROJECT_DIR$/src/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BankServer.java" afterPath="$PROJECT_DIR$/src/BankServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BankServerThread.java" afterPath="$PROJECT_DIR$/src/BankServerThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Database.java" afterPath="$PROJECT_DIR$/src/Database.java" />
     </list>
@@ -62,13 +56,13 @@
           <file leaf-file-name="BankServerThread.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/BankServerThread.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="191">
-                  <caret line="45" column="87" selection-start-line="45" selection-start-column="77" selection-end-line="45" selection-end-column="87" />
+                <state relative-caret-position="356">
+                  <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#doDeposit#0;class#BankServerThread#0" expanded="false" />
                     <element signature="method#doWithdraw#0;class#BankServerThread#0" expanded="false" />
-                    <element signature="method#doTransfer#0;class#BankServerThread#0" expanded="false" />
+                    <element signature="method#Menu#0;class#BankServerThread#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -77,12 +71,11 @@
           <file leaf-file-name="Account.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Account.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
-                  <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+                <state relative-caret-position="829">
+                  <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
                   <folding>
-                    <element signature="e#861#862#0" expanded="true" />
-                    <element signature="e#893#894#0" expanded="true" />
-                    <element signature="method#setRelease#0;class#Account#0" expanded="false" />
+                    <element signature="e#546#547#0" expanded="true" />
+                    <element signature="e#578#579#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -91,8 +84,8 @@
           <file leaf-file-name="BankState.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/BankState.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+                <state relative-caret-position="306">
+                  <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -105,12 +98,13 @@
           <file leaf-file-name="Users.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Users.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                <state relative-caret-position="170">
+                  <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#599#600#0" expanded="true" />
                     <element signature="e#641#642#0" expanded="true" />
+                    <element signature="e#696#697#0" expanded="true" />
                     <element signature="e#730#731#0" expanded="true" />
                   </folding>
                 </state>
@@ -120,8 +114,8 @@
           <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Database.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="55">
-                  <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+                <state relative-caret-position="306">
+                  <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -155,8 +149,8 @@
         <option value="$PROJECT_DIR$/src/Client.java" />
         <option value="$PROJECT_DIR$/src/Users.java" />
         <option value="$PROJECT_DIR$/src/BankServer.java" />
-        <option value="$PROJECT_DIR$/src/BankServerThread.java" />
         <option value="$PROJECT_DIR$/src/Database.java" />
+        <option value="$PROJECT_DIR$/src/BankServerThread.java" />
         <option value="$PROJECT_DIR$/src/Account.java" />
       </list>
     </option>
@@ -576,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1483539027786</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Almost there&#10;">
+      <created>1483540700892</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1483540700892</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -588,15 +589,15 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24267782" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19979079" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19979079" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28974897" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10885417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0890625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -663,18 +664,11 @@
     <MESSAGE value="Database Class added to store account information for logged in users.&#10;&#10;Account numbers have been added at the thread creation stage to give the accounts a unique name.&#10;" />
     <MESSAGE value="Transfer Implemented with Database&#10;" />
     <MESSAGE value="Sorting out order of database - account creation&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sorting out order of database - account creation&#10;" />
+    <MESSAGE value="Almost there&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost there&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Account.java</url>
-          <line>14</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
@@ -710,7 +704,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#doDeposit#0;class#BankServerThread#0" expanded="false" />
             <element signature="method#doWithdraw#0;class#BankServerThread#0" expanded="false" />
-            <element signature="method#doTransfer#0;class#BankServerThread#0" expanded="false" />
+            <element signature="method#Menu#0;class#BankServerThread#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -739,6 +733,7 @@
             <element signature="imports" expanded="true" />
             <element signature="e#599#600#0" expanded="true" />
             <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
             <element signature="e#730#731#0" expanded="true" />
           </folding>
         </state>
@@ -749,9 +744,8 @@
         <state relative-caret-position="578">
           <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
           <folding>
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="method#setRelease#0;class#Account#0" expanded="false" />
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -782,7 +776,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#doDeposit#0;class#BankServerThread#0" expanded="false" />
             <element signature="method#doWithdraw#0;class#BankServerThread#0" expanded="false" />
-            <element signature="method#doTransfer#0;class#BankServerThread#0" expanded="false" />
+            <element signature="method#Menu#0;class#BankServerThread#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -800,9 +794,8 @@
         <state relative-caret-position="391">
           <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
           <folding>
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="method#setRelease#0;class#Account#0" expanded="false" />
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -815,6 +808,7 @@
             <element signature="imports" expanded="true" />
             <element signature="e#599#600#0" expanded="true" />
             <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
             <element signature="e#730#731#0" expanded="true" />
           </folding>
         </state>
@@ -846,7 +840,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#doDeposit#0;class#BankServerThread#0" expanded="false" />
             <element signature="method#doWithdraw#0;class#BankServerThread#0" expanded="false" />
-            <element signature="method#doTransfer#0;class#BankServerThread#0" expanded="false" />
+            <element signature="method#Menu#0;class#BankServerThread#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -856,28 +850,9 @@
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="method#setRelease#0;class#Account#0" expanded="false" />
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BankServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="732">
-          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -905,27 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Users.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BankState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/sqlite-jdbc-3.15.1.jar!/org/sqlite/jdbc3/JDBC3Statement.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -942,36 +896,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Database.java">
+    <entry file="file://$PROJECT_DIR$/src/BankServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BankState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BankServerThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="45" column="87" selection-start-line="45" selection-start-column="77" selection-end-line="45" selection-end-column="87" />
+        <state relative-caret-position="356">
+          <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#doDeposit#0;class#BankServerThread#0" expanded="false" />
             <element signature="method#doWithdraw#0;class#BankServerThread#0" expanded="false" />
-            <element signature="method#doTransfer#0;class#BankServerThread#0" expanded="false" />
+            <element signature="method#Menu#0;class#BankServerThread#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="829">
+          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
           <folding>
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="method#setRelease#0;class#Account#0" expanded="false" />
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>

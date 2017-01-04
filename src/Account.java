@@ -14,11 +14,6 @@ public class Account {
         this.Socket = socket;
         Database.createAccount(this.AccountId,Balance);
 
-        //Database.createAccount(this.AccountId, this.Balance);
-
-        //System.out.println("A new account has been created, Name: " + AccountId + " Balance: "
-          //      + Balance + " Socket: " + Socket + " Thread: " + BankServerThread.currentThread().getId());
-        //Users.addActiveUsers(AccountId);
     }
 
     Account(int id, String accountId, Double balance){
@@ -35,8 +30,7 @@ public class Account {
     public synchronized double getBalance(){
         if(BankState.aquireLock(AccountId)){
             System.out.println("Lock acquired for account " + AccountId);
-            this.Balance =  Database.getAccountBalance(AccountId);
-            return this.Balance;
+            return  Database.getAccountBalance(AccountId);
         } else {
             System.out.println("Lock could not be acquired for account before getting the balance");
             return Balance;

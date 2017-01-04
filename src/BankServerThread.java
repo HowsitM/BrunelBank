@@ -1,6 +1,5 @@
 import java.net.*;
 import java.io.*;
-import java.util.HashMap;
 
 import static java.lang.Integer.parseInt;
 
@@ -61,7 +60,7 @@ public class BankServerThread extends Thread{
             newBalance = account.getBalance() + depositAmount;
             account.setBalance(newBalance);
             out.println("You have deposited " + depositAmount + " into account " + account.getAccountId() +
-                                        " Your balance has been updated to " + this.account.getBalance()+"\r");
+                                        " Your balance has been updated to " + Database.getAccountBalance(account.getAccountId())+"\r");
             account.setRelease();
         }
         catch (IOException e) {
@@ -95,23 +94,25 @@ public class BankServerThread extends Thread{
     private synchronized void doTransfer(){
 
         String receiver;
-        Account currentAccount = this.account;
+        Account currentAccount = account;
+        String receiverAccountName;
         Account receiverAccount;
         Double transferAmount;
         Double currentAccountNewBalance;
         Double receiverAccountNewBalance;
 
         //Lock the account you are using
-        currentAccount.setLock();
 
-        out.println("Who would you like to send money to?\n"+ Users.getActiveUsers());
+
+        out.println("Who would you like to send money to?\n");
         Users.getActiveUsers();
-
+        currentAccount.setLock();
         try{
+
             BufferedReader in = new BufferedReader(new InputStreamReader(ServerSocket.getInputStream()));
 
-            receiver = in.readLine(); //who you are sending it too
-            receiverAccount = Database.getAccount(receiver);
+            receiverAccountName = in.readLine(); //who you are sending it too
+            receiverAccount = Database.getAccount(receiverAccountName);
             receiverAccount.setLock();
 
             out.println("How much would you like to send them?");
@@ -123,7 +124,7 @@ public class BankServerThread extends Thread{
             receiverAccountNewBalance = receiverAccount.getBalance() + transferAmount;
             receiverAccount.setBalance(receiverAccountNewBalance);
 
-            out.println("You have sent " + transferAmount + "to " + receiverAccount.getAccountId()
+            out.println("You have sent " + transferAmount + " to " + receiverAccount.getAccountId()
                     + ". Your balance is now" + currentAccount.getBalance());
 
             currentAccount.setRelease();

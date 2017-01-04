@@ -55,7 +55,7 @@ public class Database {
     public static double getAccountBalance(String accountName){
 
         try {
-            ResultSet rs = stmt.executeQuery("SELECT balance FROM users WHERE name='" + accountName +'"');
+            ResultSet rs = stmt.executeQuery("SELECT balance FROM users WHERE name='" + accountName +"'");
             return rs.getDouble("balance");
         }catch (SQLException e){
             e.printStackTrace();
