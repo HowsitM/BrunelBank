@@ -6,7 +6,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrunelBank/Client.class" afterPath="$PROJECT_DIR$/out/production/BrunelBank/Client.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Account.java" afterPath="$PROJECT_DIR$/src/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BankState.java" afterPath="$PROJECT_DIR$/src/BankState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Database.java" afterPath="$PROJECT_DIR$/src/Database.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Users.java" afterPath="$PROJECT_DIR$/src/Users.java" />
     </list>
     <ignored path="BrunelBank.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Account.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Account.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+            <state relative-caret-position="680">
+              <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
               <folding>
                 <element signature="method#Account#0;class#Account#0" expanded="false" />
                 <element signature="method#Account#1;class#Account#0" expanded="false" />
@@ -87,27 +88,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Database.java">
+      <file leaf-file-name="Users.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Users.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
-              <folding>
-                <element signature="method#update#0;class#Database#0" expanded="false" />
-                <element signature="method#getAccount#0;class#Database#0" expanded="false" />
-                <element signature="method#getAccountBalance#0;class#Database#0" expanded="false" />
-                <element signature="method#setAccountBalance#0;class#Database#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Users.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Users.java">
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="595">
+              <caret line="77" column="101" selection-start-line="77" selection-start-column="101" selection-end-line="77" selection-end-column="101" />
+              <folding>
+                <element signature="method#Database#0;class#Database#0" expanded="false" />
+                <element signature="method#createAccount#0;class#Database#0" expanded="false" />
+                <element signature="method#getAccount#0;class#Database#0" expanded="false" />
+                <element signature="method#getAccountBalance#0;class#Database#0" expanded="false" />
+                <element signature="method#setAccountBalance#0;class#Database#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,13 +150,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Users.java" />
-        <option value="$PROJECT_DIR$/src/Database.java" />
         <option value="$PROJECT_DIR$/src/BankServer.java" />
         <option value="$PROJECT_DIR$/src/Client.java" />
         <option value="$PROJECT_DIR$/src/BankServerThread.java" />
         <option value="$PROJECT_DIR$/src/BankState.java" />
         <option value="$PROJECT_DIR$/src/Account.java" />
+        <option value="$PROJECT_DIR$/src/Users.java" />
+        <option value="$PROJECT_DIR$/src/Database.java" />
       </list>
     </option>
   </component>
@@ -581,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1483736468251</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Comments added to describe methods in:&#10;&#10;- BankState">
+      <created>1483737628693</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1483737628693</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -672,7 +681,8 @@
     <MESSAGE value="BankServerThread - run() updated to get balance information from the database + updated doTransfer to get receiver account information + improved English in doTransfer output line.&#10;&#10;Account - Deleted  comments + getBalance() function updated to remove redundant data assignment &#10;&#10;Database - SQL query corrected ' &quot; ' to &quot; ' &quot;" />
     <MESSAGE value="Various comments and touch ups added including spelling :)" />
     <MESSAGE value="Comments added to describe methods in:&#10;&#10;- BankServer&#10;- BankServerThread&#10;- Client" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comments added to describe methods in:&#10;&#10;- BankServer&#10;- BankServerThread&#10;- Client" />
+    <MESSAGE value="Comments added to describe methods in:&#10;&#10;- BankState" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments added to describe methods in:&#10;&#10;- BankState" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -739,7 +749,8 @@
         <state relative-caret-position="306">
           <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
           <folding>
-            <element signature="method#update#0;class#Database#0" expanded="false" />
+            <element signature="method#Database#0;class#Database#0" expanded="false" />
+            <element signature="method#createAccount#0;class#Database#0" expanded="false" />
             <element signature="method#getAccount#0;class#Database#0" expanded="false" />
             <element signature="method#getAccountBalance#0;class#Database#0" expanded="false" />
             <element signature="method#setAccountBalance#0;class#Database#0" expanded="false" />
@@ -839,7 +850,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#update#0;class#Database#0" expanded="false" />
+            <element signature="method#Database#0;class#Database#0" expanded="false" />
+            <element signature="method#createAccount#0;class#Database#0" expanded="false" />
             <element signature="method#getAccount#0;class#Database#0" expanded="false" />
             <element signature="method#getAccountBalance#0;class#Database#0" expanded="false" />
             <element signature="method#setAccountBalance#0;class#Database#0" expanded="false" />
@@ -886,7 +898,8 @@
         <state relative-caret-position="459">
           <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
           <folding>
-            <element signature="method#update#0;class#Database#0" expanded="false" />
+            <element signature="method#Database#0;class#Database#0" expanded="false" />
+            <element signature="method#createAccount#0;class#Database#0" expanded="false" />
             <element signature="method#getAccount#0;class#Database#0" expanded="false" />
             <element signature="method#getAccountBalance#0;class#Database#0" expanded="false" />
             <element signature="method#setAccountBalance#0;class#Database#0" expanded="false" />
@@ -1114,10 +1127,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
+          <folding>
+            <element signature="method#Account#0;class#Account#0" expanded="false" />
+            <element signature="method#Account#1;class#Account#0" expanded="false" />
+            <element signature="method#getBalance#0;class#Account#0" expanded="false" />
+            <element signature="method#setBalance#0;class#Account#0" expanded="false" />
+            <element signature="method#setLock#0;class#Account#0" expanded="false" />
+            <element signature="method#setRelease#0;class#Account#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        <state relative-caret-position="221">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1135,28 +1163,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+        <state relative-caret-position="595">
+          <caret line="77" column="101" selection-start-line="77" selection-start-column="101" selection-end-line="77" selection-end-column="101" />
           <folding>
-            <element signature="method#update#0;class#Database#0" expanded="false" />
+            <element signature="method#Database#0;class#Database#0" expanded="false" />
+            <element signature="method#createAccount#0;class#Database#0" expanded="false" />
             <element signature="method#getAccount#0;class#Database#0" expanded="false" />
             <element signature="method#getAccountBalance#0;class#Database#0" expanded="false" />
             <element signature="method#setAccountBalance#0;class#Database#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding>
-            <element signature="method#Account#0;class#Account#0" expanded="false" />
-            <element signature="method#Account#1;class#Account#0" expanded="false" />
-            <element signature="method#getBalance#0;class#Account#0" expanded="false" />
-            <element signature="method#setBalance#0;class#Account#0" expanded="false" />
-            <element signature="method#setLock#0;class#Account#0" expanded="false" />
-            <element signature="method#setRelease#0;class#Account#0" expanded="false" />
           </folding>
         </state>
       </provider>
