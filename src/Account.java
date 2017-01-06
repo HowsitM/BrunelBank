@@ -5,7 +5,7 @@ public class Account {
     private String AccountId;
     private double Balance;
     private Socket Socket;
-    private int iD;
+    private int iD; //created but never used
 
     Account(String newThreadName, Socket socket){
 
@@ -13,7 +13,6 @@ public class Account {
         this.Balance = 100;
         this.Socket = socket;
         Database.createAccount(this.AccountId,Balance);
-
     }
 
     Account(int id, String accountId, Double balance){
@@ -28,7 +27,7 @@ public class Account {
     }
 
     public synchronized double getBalance(){
-        if(BankState.aquireLock(AccountId)){
+        if(BankState.acquireLock(AccountId)){
             System.out.println("Lock acquired for account " + AccountId);
             return  Database.getAccountBalance(AccountId);
         } else {
@@ -39,7 +38,7 @@ public class Account {
 
     public synchronized void setBalance(double balance){
 
-        if (BankState.aquireLock(AccountId)){
+        if (BankState.acquireLock(AccountId)){
             this.Balance = balance;
             Database.setAccountBalance(this.AccountId, this.Balance);
             System.out.println(AccountId + " Balance has been updated");
@@ -52,8 +51,9 @@ public class Account {
     public synchronized void setLock(){
         try
         {
-            while(!BankState.aquireLock(AccountId)){
-                System.out.println("Attempting to acquire a lock on account " + AccountId);
+            while(!BankState.acquireLock(AccountId)){
+                System.out.println(" Attempting to acquire a lock on account " + AccountId);
+                System.out.println("Waiting for a lock as someone else is accessing...");
                 wait();
             }
             System.out.println(AccountId + " has acquired a lock");

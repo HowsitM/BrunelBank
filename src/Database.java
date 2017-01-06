@@ -38,11 +38,11 @@ public class Database {
 
     public static Account getAccount(String accountName) {
         try {
-            ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE name='" + accountName + "'");
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-                double balance = rs.getDouble("balance");
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM users WHERE name='" + accountName + "'");
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                double balance = resultSet.getDouble("balance");
                 return new Account(id, name, balance);
             }
 
@@ -64,8 +64,6 @@ public class Database {
     }
 
     public static void setAccountBalance(String name, double balance){
-
         update("UPDATE users SET 'balance'=" + balance + " WHERE name='" + name + "'");
-
     }
 }

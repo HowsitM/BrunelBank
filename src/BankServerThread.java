@@ -28,15 +28,14 @@ public class BankServerThread extends Thread{
 
         System.out.println(BankServerThread.currentThread() + " initialising...");
 
-
         //assigns the current thread to an account
         Account account = new Account(idName, this.ServerSocket);
 
         this.account = account;
         Users.addActiveUsers(idName);
         System.out.println("These are the active users "+ Users.getActiveUsers());
-            out.println("You are logged in as: " +  account.getAccountId());
-            Menu();
+        out.println("You are logged in as: " +  account.getAccountId() + "\r");
+        Menu();
     }
 
     public synchronized void doBalance(){
@@ -45,6 +44,7 @@ public class BankServerThread extends Thread{
         out.println("Account "  + account.getAccountId() + " has " + account.getBalance());
         account.setRelease();
         Menu();
+
     }
 
     private synchronized void doDeposit(){
@@ -93,7 +93,6 @@ public class BankServerThread extends Thread{
 
     private synchronized void doTransfer(){
 
-        String receiver;
         Account currentAccount = account;
         String receiverAccountName;
         Account receiverAccount;
@@ -102,7 +101,6 @@ public class BankServerThread extends Thread{
         Double receiverAccountNewBalance;
 
         //Lock the account you are using
-
 
         out.println("Who would you like to send money to?\n");
         Users.getActiveUsers();
@@ -155,7 +153,6 @@ public class BankServerThread extends Thread{
                 case 2: doDeposit(); break;
                 case 3: doWithdraw(); break;
                 case 4: doTransfer(); break;
-                case 5: break;
                 default: Menu(); break;
             }
 
@@ -163,5 +160,4 @@ public class BankServerThread extends Thread{
             System.err.println(e);
         }
     }
-
 }

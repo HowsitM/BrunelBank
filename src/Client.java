@@ -9,15 +9,12 @@ public class Client {
     public static void main(String[] args) throws IOException{
 
         //set up a socket and in and out variables
-
         Socket BankClientSocket = null;
         PrintWriter out = null;
         BufferedReader in  = null;
-
         int port = 4545;
 
         //Attempts to create a connection to the Bank Server
-
         try {
             BankClientSocket = new Socket("localhost", port);
             out = new PrintWriter(BankClientSocket.getOutputStream(),true);
@@ -32,15 +29,15 @@ public class Client {
         //inputs received from the user is added to an arraylist
 
         BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
-        List<String> outPut = new ArrayList<>();
+        List<String> output = new ArrayList<>();
         String fromUser, fromServer;
 
         while((fromServer = in.readLine()) != null){
             if(fromServer.isEmpty()){
-                for(String s : outPut){
+                for(String s : output){
                     System.out.println(s);
                 }
-                outPut.clear();
+                output.clear();
             }
             if(!in.ready()) {
                 System.out.print(fromServer);
@@ -50,7 +47,7 @@ public class Client {
                     out.println(fromUser);
                 }
             } else {
-                outPut.add(fromServer);
+                output.add(fromServer);
             }
         }
         //the connection is closed.
