@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59a0685b-0306-403a-b610-81b917de7d93" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrunelBank/BankServerThread.class" afterPath="$PROJECT_DIR$/out/production/BrunelBank/BankServerThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrunelBank/Client.class" afterPath="$PROJECT_DIR$/out/production/BrunelBank/Client.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Account.java" afterPath="$PROJECT_DIR$/src/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Database.java" afterPath="$PROJECT_DIR$/src/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Users.java" afterPath="$PROJECT_DIR$/src/Users.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BankState.java" afterPath="$PROJECT_DIR$/src/BankState.java" />
     </list>
     <ignored path="BrunelBank.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="77" column="101" selection-start-line="77" selection-start-column="101" selection-end-line="77" selection-end-column="101" />
+            <state relative-caret-position="646">
+              <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
               <folding>
                 <element signature="method#Database#0;class#Database#0" expanded="false" />
                 <element signature="method#createAccount#0;class#Database#0" expanded="false" />
@@ -114,14 +110,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BankState.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BankState.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BankState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
-                <element signature="e#549#550#0" expanded="true" />
-                <element signature="e#591#592#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#acquireLock#0;class#BankState#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -153,10 +149,10 @@
         <option value="$PROJECT_DIR$/src/BankServer.java" />
         <option value="$PROJECT_DIR$/src/Client.java" />
         <option value="$PROJECT_DIR$/src/BankServerThread.java" />
-        <option value="$PROJECT_DIR$/src/BankState.java" />
         <option value="$PROJECT_DIR$/src/Account.java" />
         <option value="$PROJECT_DIR$/src/Users.java" />
         <option value="$PROJECT_DIR$/src/Database.java" />
+        <option value="$PROJECT_DIR$/src/BankState.java" />
       </list>
     </option>
   </component>
@@ -590,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1483737628693</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Comments added to describe methods in:&#10;&#10;- Users&#10;- Database">
+      <created>1483738344676</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1483738344676</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -682,7 +685,8 @@
     <MESSAGE value="Various comments and touch ups added including spelling :)" />
     <MESSAGE value="Comments added to describe methods in:&#10;&#10;- BankServer&#10;- BankServerThread&#10;- Client" />
     <MESSAGE value="Comments added to describe methods in:&#10;&#10;- BankState" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comments added to describe methods in:&#10;&#10;- BankState" />
+    <MESSAGE value="Comments added to describe methods in:&#10;&#10;- Users&#10;- Database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments added to describe methods in:&#10;&#10;- Users&#10;- Database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -771,8 +775,8 @@
         <state relative-caret-position="255">
           <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding>
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#acquireLock#0;class#BankState#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -831,8 +835,8 @@
         <state relative-caret-position="306">
           <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding>
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#acquireLock#0;class#BankState#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -912,8 +916,8 @@
         <state relative-caret-position="51">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#acquireLock#0;class#BankState#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -980,8 +984,8 @@
         <state relative-caret-position="51">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#acquireLock#0;class#BankState#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1150,27 +1154,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BankState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="77" column="101" selection-start-line="77" selection-start-column="101" selection-end-line="77" selection-end-column="101" />
+        <state relative-caret-position="646">
+          <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
           <folding>
             <element signature="method#Database#0;class#Database#0" expanded="false" />
             <element signature="method#createAccount#0;class#Database#0" expanded="false" />
             <element signature="method#getAccount#0;class#Database#0" expanded="false" />
             <element signature="method#getAccountBalance#0;class#Database#0" expanded="false" />
             <element signature="method#setAccountBalance#0;class#Database#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BankState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#acquireLock#0;class#BankState#0" expanded="false" />
           </folding>
         </state>
       </provider>
