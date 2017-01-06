@@ -19,7 +19,6 @@ public class BankState {
     }
 
     public static void unlock(String AccountID){
-
         isLocked.remove(AccountID);
     }
 }
