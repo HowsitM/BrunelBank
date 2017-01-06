@@ -6,6 +6,11 @@ import java.util.List;
 
 public class Client {
 
+    // -This is where the client starts when it attempts to connect to the Server.
+    // -A BankClientSocket is created connecting to the server.
+    // -Inputs from the client are stored within an ArrayList, each time the client enters something
+    //   it is added to the list and then printed to the console.
+    // -It also prints out messages from the server to the client
     public static void main(String[] args) throws IOException{
 
         //set up a socket and in and out variables
@@ -27,9 +32,8 @@ public class Client {
         }
 
         //inputs received from the user is added to an arraylist
-
         BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
-        List<String> output = new ArrayList<>();
+        ArrayList<String> output = new ArrayList<>();
         String fromUser, fromServer;
 
         while((fromServer = in.readLine()) != null){

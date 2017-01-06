@@ -3,19 +3,29 @@ import java.io.*;
 
 import static java.lang.Integer.parseInt;
 
-public class BankServerThread extends Thread{
+    //BankServerThread extends thread creates a new thread once a client has connected.
+
+    public class BankServerThread extends Thread{
 
     private Socket ServerSocket;
     private String idName;
     private Account account;
     private PrintWriter out;
-    //private Double startBalance = 100.00;
+
+        // -This constructor names the thread which corresponds to the variables passed through from BankServer.
+
 
     public BankServerThread(Socket serverSocket, String newThreadName){
         super(newThreadName);
         this.idName = newThreadName;
         this.ServerSocket = serverSocket;
     }
+
+        // -Once the thread has been created run() starts the thread.
+        // -This is where the magic happens.
+        // -A new account object is created passing the thread name (idName) and the Socket object (ServerSocket) as parameters.
+        // -A list of the currently active users is then displayed from the Users class.
+        // -The menu is then displayed.
 
     public void run(){
     //Create the account that I'm assigning to the thread
@@ -38,14 +48,24 @@ public class BankServerThread extends Thread{
         Menu();
     }
 
+        // - doBalance() will lock the account object that is currently accessing this function.
+        // - The balance is then accessed from the account class through the getBalance() method.
+        // - Once the balance has been returned the account object is released.
+        // - The keyword synchronized is there so that the method can not be accessed by two threads at the same time
+
     public synchronized void doBalance(){
 
         account.setLock();
         out.println("Account "  + account.getAccountId() + " has " + account.getBalance());
         account.setRelease();
         Menu();
-
     }
+
+
+        // -doDeposit() takes in an amount from the user creates a newBalance variable passing it to the account.setBalance()
+        // method as a parameter which updates the database.
+        // -As soon as the user has selected the menu option for deposit the account is locked to avoid concurrency issues with
+        //   other accounts. Once the update has occurred the lock is released on the account. And the menu is displayed again.
 
     private synchronized void doDeposit(){
 
@@ -69,6 +89,11 @@ public class BankServerThread extends Thread{
         Menu();
     }
 
+        // -doWithdraw() takes in an amount from the user creates a newBalance variable passing it to the account.setBalance()
+        // method as a parameter which updates the database.
+        // -As soon as the user has selected the menu option for Withdraw the account is locked to avoid concurrency issues with
+        //   other accounts. Once the update has occurred the lock is released on the account. And the menu is displayed again.
+
     private synchronized void doWithdraw(){
 
         double withdrawAmount;
@@ -90,6 +115,12 @@ public class BankServerThread extends Thread{
         }
         Menu();
     }
+
+        // -doTransfer() will lock the current account and then ask the user who they want to transfer to and how much.
+        // -Once the account name of the receiver is know that account is returned from the Database class and stored for the duration of the method
+        // -The amount is then subtracted from the current account and the balance is updated
+        // -The amount is then added to the receivers account and the balance is updated.
+        // -Once the update has occurred both locks are released for each account.
 
     private synchronized void doTransfer(){
 
@@ -136,6 +167,10 @@ public class BankServerThread extends Thread{
 
         Menu();
     }
+
+
+        //Menu() simply displays and asks the user for input for the actions they want to take.
+        //Based on the users choice the corresponding method is run.
 
     private synchronized void Menu(){
 

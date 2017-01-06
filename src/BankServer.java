@@ -3,6 +3,14 @@ import java.net.ServerSocket;
 
 public class BankServer {
 
+
+    // -Where the program starts.
+    // -A new ServerSocket object is created which is what clients will be connecting to.
+    // -This method also creates the database where client information is stored.
+    // -Each time a connection is detected the connection number is turned into the accountName
+    //  which becomes the accountId.
+    // A new thread is created for each connection to the ServerSocket.
+
     public static void main(String[] args) throws IOException {
 
         ServerSocket serverSocket = null;
